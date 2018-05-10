@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/LucasVmigotto/api-example#readme",
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "nodemon": "^1.17.4"
+    "nodemon": "^1.17.4",
+    "standard": "^11.0.1"
   },
   "dependencies": {
     "body-parser": "^1.18.2",

@@ -1,19 +1,20 @@
-const mongoose = require('ḿongoose')
+const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: 'Name field can\'t be empty.'
+    required: 'Name field can\'t be empty.'
   },
   email: {
     type: String,
-    require: 'E-Mail field can\'t be empty.'
+    required: 'E-Mail field can\'t be empty.'
   },
   birthday: { type: Date },
   create: {
     type: Date,
     default: Date.now()
-  }
+  },
+  update: { type: Date }
 })
 
 module.exports = mongoose.model('User', UserSchema)

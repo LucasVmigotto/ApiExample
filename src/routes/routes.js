@@ -8,4 +8,7 @@ module.exports = (app) => {
   app.route('/user/:id')
     .get(controller.read)
     .delete(controller.delete)
+  app.use((req, res) => {
+    res.status(404).send({ data: `${req.originalUrl} not found.` })
+  })
 }

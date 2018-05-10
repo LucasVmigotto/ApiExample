@@ -10,15 +10,15 @@ const app = express()
 
 mongoose.connect(config.url).then(
   () => {
-    console.log('\n****\tConnecting with the database...\n' +
-      '****\t\tMake sure the mongodb service is started.\n' +
-      '****\t\tTo fix this, try run in the terminal \'sudo service mongo start\'')
+    console.log('\n****\tConnecting with the database...\n')
   }
 ).catch(
   (err) => {
     if (err) {
       console.log(`\n****\tError while connecting to the database.\n` +
-        `****\tError description: ${err.message}\n`)
+      '****\t\tMake sure the mongodb service is started.\n' +
+      '****\t\tTo fix this, try run in the terminal \'sudo service mongo start\'' +
+      `****\tError description: ${err.message}\n`)
     }
   }
 )
