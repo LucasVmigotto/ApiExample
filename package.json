@@ -1,0 +1,38 @@
+{
+  "name": "api-example",
+  "version": "1.0.0",
+  "description": "RESTful API em NodeJs",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasVmigotto/api-example.git"
+  },
+  "keywords": [
+    "API",
+    "RESTful",
+    "NodeJs",
+    "MongoDB",
+    "Express"
+  ],
+  "author": "Lucas Vidor Migotto <lucasmigotto@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucasVmigotto/api-example/issues"
+  },
+  "homepage": "https://github.com/LucasVmigotto/api-example#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "nodemon": "^1.17.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.18",
+    "morgan": "^1.9.0"
+  }
+}
