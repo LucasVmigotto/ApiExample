@@ -1,38 +1,44 @@
 {
   "name": "api-example",
+  "description": "RESTful API usando NodeJs e Vue",
   "version": "1.0.0",
-  "description": "RESTful API em NodeJs",
-  "main": "src/server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LucasVmigotto/api-example.git"
-  },
-  "keywords": [
-    "API",
-    "RESTful",
-    "NodeJs",
-    "MongoDB",
-    "Express"
-  ],
   "author": "Lucas Vidor Migotto <lucasmigotto@outlook.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/LucasVmigotto/api-example/issues"
-  },
-  "homepage": "https://github.com/LucasVmigotto/api-example#readme",
-  "devDependencies": {
-    "nodemon": "^1.17.4",
-    "standard": "^11.0.1"
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run dev\"",
+    "server": "nodemon src/server.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "mongoose": "^5.0.18",
-    "morgan": "^1.9.0"
+    "mongoose": "^5.1.0",
+    "morgan": "^1.9.0",
+    "vue": "^2.5.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.4",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.17.4",
+    "sass-loader": "^6.0.6",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
   }
 }
