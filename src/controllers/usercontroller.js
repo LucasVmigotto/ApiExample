@@ -33,7 +33,8 @@ exports.update = (req, res) => {
     {
       name: req.body.name,
       email: req.body.email,
-      update: Date.now()
+      birthday: req.body.birthday,
+      update: Date.now(),
     }, { new: true }, (err, user) => {
       if (err) { errorHandler(err, res, 'Error updating the user') }
       res.json({ data: user, err: false })

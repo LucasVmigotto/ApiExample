@@ -7,7 +7,7 @@ const server = app.listen(app.get('port'), (err) => {
   }
   console.log(`\n****\tApplication running\n` +
     `\tURL: https://localhost:${app.get('port')}\n` +
-    `\tEnvironment: ${app.get('port')}`)
+    `\tEnvironment: ${app.get('env')}`)
 })
 
 module.exports = server
