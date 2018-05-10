@@ -8,8 +8,8 @@ Um projeto que mostra exemplos de RESTful APIs construídas com maneiras, tecnol
 
 APIs disponíveis até o momento:
 
-* Branch [TypeScript + NodeJs](https://goo.gl/pxm1EU)
-* Branch [JavaScript + NodeJs](https://goo.gl/5D9Bny)
+* Branch [JavaScript + NodeJs](https://goo.gl/pxm1EU)
+* Branch [TypeScript + NodeJs](https://goo.gl/5D9Bny)
 
 ## Desenvolvimento
 
