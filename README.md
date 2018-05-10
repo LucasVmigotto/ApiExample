@@ -5,11 +5,13 @@ Um projeto que mostra exemplos de RESTful APIs construídas com maneiras, tecnol
 * [JavaScript](https://goo.gl/yUCHeG)
 * [NodeJs](https://goo.gl/nZ9eqf)
 * [TypeScript](https://goo.gl/U1TWdw)
+* [Vue](https://goo.gl/rgKjAa)
 
 APIs disponíveis até o momento:
 
 * Branch [JavaScript + NodeJs](https://goo.gl/pxm1EU)
 * Branch [TypeScript + NodeJs](https://goo.gl/5D9Bny)
+* Branch [JavaScript + NodeJs + Vue](https://goo.gl/C8WJjo)
 
 ## Desenvolvimento
 
@@ -45,7 +47,7 @@ APIs disponíveis até o momento:
     npm start
     ```
 
-    > Irá subir o serviço em [localhost:8080](htpp://localhost:8080)
+    > Irá subir o serviço em localhost:8080
 
 ### TypeScript + NodeJs
 
@@ -61,4 +63,20 @@ APIs disponíveis até o momento:
     npm start
     ```
 
-    > Irá subir o serviço em [localhost:8080](htpp://localhost:8080)
+    > Irá subir o serviço em localhost:8080
+
+### JavaScript + NodeJs + Vue
+
+1. Instale os _node modules_
+
+    ```bash
+    npm install
+    ```
+
+2. Suba o serviço
+
+    ```bash
+    npm start
+    ```
+
+    > Simultaneamente irá executar o NodeJs em localhost:8000 e o Vue em localhost:8080 (este último em modo de desenvolvimento)
