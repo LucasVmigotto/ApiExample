@@ -4,6 +4,7 @@ const bodyparser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const config = require('./configs/db.json')
+const routes = require('./routes/routes')
 const port = process.env.PORT || 8000
 const app = express()
 
@@ -26,6 +27,7 @@ app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
 
 app.use(morgan('combined'))
+routes(app)
 app.use(cors())
 app.set('port', port)
 
