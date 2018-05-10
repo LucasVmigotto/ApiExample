@@ -27,8 +27,8 @@ app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
 
 app.use(morgan('combined'))
-routes(app)
 app.use(cors())
+routes(app)
 app.set('port', port)
 
 module.exports = app

@@ -12,12 +12,14 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "mongoose": "^5.1.0",
     "morgan": "^1.9.0",
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "vuetify": "^1.0.17"
   },
   "browserslist": [
     "> 1%",
