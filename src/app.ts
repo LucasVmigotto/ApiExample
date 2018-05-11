@@ -26,8 +26,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(morgan('combined'))
-routes(app);
 app.use(cors());
+routes(app);
 app.set('port', port);
 
 export default app;
