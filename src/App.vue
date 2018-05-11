@@ -102,7 +102,7 @@ export default {
         })
       }
     },
-    searchUser(id){
+    searchUser(id) {
       axios.get(`${api}/${id}`).then((data) => {
         if (data.data.err) { return alert(data.data.data) }
         let user = data.data.data
@@ -115,7 +115,7 @@ export default {
         this.submit = 'Update'
       })
     },
-    deleteUser(id){
+    deleteUser(id) {
       axios.delete(`${api}/${id}`).then(
         (data) => {
           if (data.data.err) { return alert(data.data.data) }
@@ -123,13 +123,12 @@ export default {
         }
       )
     },
-    formatDate(dateToFormat, pattern){
+    formatDate(dateToFormat, pattern) {
       const date = new Date(`${dateToFormat}`)
       let day = `${date.getUTCDate()}`
       let month = `${date.getMonth()+1}`
       const year = `${date.getFullYear()}`
       
-
       if (day.length < 2 ) { day = `0${day}` }
       if (month.length < 2 ) { month = `0${month}` }
 
@@ -139,7 +138,7 @@ export default {
         return `${day}/${month}/${year}`
       }
     },
-    validateForm(){
+    validateForm() {
       if (this.name.trim() === '' || this.email.trim() === '') {
         return false
       } else {
