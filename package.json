@@ -7,6 +7,7 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"npm run dev\" \"npm run server\"",
+    "start:dev": "NODE_ENV='development' concurrently \"npm run dev\" \"npm run server\"",
     "server": "nodemon src/server.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
@@ -23,6 +24,7 @@
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
+    "graphql-iso-date": "^3.5.0",
     "graphql-tools": "^3.0.1",
     "mongoose": "^5.1.1",
     "node-sass": "^4.9.0",
