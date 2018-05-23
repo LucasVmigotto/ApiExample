@@ -17,10 +17,11 @@ module.exports = {
   },
   Mutation: {
     create: (parent, args, context, info) => {
-      return controller.create(args)
+      return controller.create(args.user)
     },
     update: (parent, args, context, info) => {
-      return controller.update(args)
+      return controller.update(Object
+        .assign({ id: args.id }, args.user))
     },
     delete: (parent, args, context, info) => {
       return controller.delete(args.id)
