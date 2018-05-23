@@ -7,6 +7,6 @@ module.exports = (app) => {
   }))
 
   app.use((req, res) => {
-    res.status(404).send({ data: `${req.originalUrl} not found`})
+    res.status(404).send({ data: `${req.method}:${req.originalUrl} not found`})
   })
 }
