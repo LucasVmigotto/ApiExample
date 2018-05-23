@@ -1,7 +1,8 @@
 const User = require('../models/user')
+const log = require('../util/logLabel')
 
 const errorHandler = (err, message) => {
-  console.log(`\n****\tError: ${err.message}`)
+  console.log(`${log()}Error: ${err.message}`)
 }
 
 exports.list = () => {
