@@ -6,6 +6,7 @@ let server = null
 
 mongoose.connect(config.url).then(
   () => {
+    console.log(`${log()}Connected with the database.`)
     server = app.listen(app.get('port'), (err) => {
       if (err) {
         console.log(`${log()}A errot occrred while running the application.` +
