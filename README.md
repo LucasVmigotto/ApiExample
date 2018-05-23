@@ -132,10 +132,15 @@ Para utilizar a consulta com o GraphQL a forma de requisição é diferente do p
 
     ```text
     mutation{
-        create(name:"Jonh Doe", email:"example@mail.com",){
+        create(
+            user: {
+                name:"John Doe"
+                email:"john@doe.com"
+            }
+        ){
             id
             name
-            ...
+            create
         }
     }
     ```
@@ -148,4 +153,4 @@ Para utilizar a consulta com o GraphQL a forma de requisição é diferente do p
     query{%20list{%20name%20email%20}}
 
     Exemplo de uma requisição para **mutation**:
-    mutation%7Bcreate(name%3A"John%20Doe"%2Cemail%3A"example%40mail.com")%7Bid%20name%7D%7D
+    mutation%7Bcreate(user%3A%7Bname%3A"John%20Doe"email%3A"john%40doe.com"%7D)%7Bid%20name%20create%7D%7D
