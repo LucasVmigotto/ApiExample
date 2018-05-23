@@ -29,13 +29,9 @@ exports.read = (req, res) => {
 }
 
 exports.update = (req, res) => {
-  User.findByIdAndUpdate({ _id: req.body.id },
-    {
-      name: req.body.name,
-      email: req.body.email,
-      birthday: req.body.birthday,
-      update: Date.now(),
-    }, { new: true }, (err, user) => {
+  let user = req.body
+  user.update = Date.now()
+  User.findByIdAndUpdate({ _id: req.body.id }, user, { new: true }, (err, user) => {
       if (err) { return errorHandler(err, res, 'Error updating the user') }
       res.json({ data: user, err: false })
     }
