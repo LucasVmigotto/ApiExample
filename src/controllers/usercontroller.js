@@ -29,10 +29,10 @@ exports.read = (req, res) => {
 }
 
 exports.update = (req, res) => {
-  let user = req.body
-  user.update = Date.now()
+  let newUser = req.body
+  newUser.update = Date.now()
   User.findByIdAndUpdate({ _id: req.body.id },
-    user, { new: true }, (err, user) => {
+    newUser, { new: true }, (err, user) => {
       if (err) { return errorHandler(err, res, 'Error updating the user') }
       res.json({ data: user, err: false })
     }
