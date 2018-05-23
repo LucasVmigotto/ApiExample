@@ -1,8 +1,8 @@
 const User = require('../models/user')
-const label = '\n****\t'
+const log = require('../util/logLabel')
 
 const errorHandler = (err, res, message) => {
-  console.log(`${label}Error: ${err.message}`)
+  console.log(`${log()}Error: ${err.message}`)
   res.json({ data: message, err: true })
 }
 
