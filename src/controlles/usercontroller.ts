@@ -1,6 +1,6 @@
 import { default as User, UserModel } from '../models/user';
 import { Request, Response } from 'express';
-const log = require('../util/logLabel');
+import log from '../util/logLabel';
 
 const errorHandler = (err: Error, res: Response, message: String) => {
   console.log(`${log()}Error: ${err.message}`);
