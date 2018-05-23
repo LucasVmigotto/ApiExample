@@ -1,9 +1,9 @@
-import { default as User } from '../models/user';
+import { default as User, UserModel } from '../models/user';
 import { Request, Response } from 'express';
+const log = require('../util/logLabel');
 
-const label = '\n****\t'
 const errorHandler = (err: Error, res: Response, message: String) => {
-  console.log(`${label}Error: ${err.message}`);
+  console.log(`${log()}Error: ${err.message}`);
   res.json({ data: message, err: true });
 }
 
@@ -30,13 +30,9 @@ export const read = (req: Request, res: Response) => {
 }
 
 export const update = (req: Request, res: Response) => {
-  User.findByIdAndUpdate({ _id: req.body.id },
-  {
-    name: req.body.name,
-    email: req.body.email,
-    birthday: req.body.birthday,
-    update: Date.now()
-  }, { new: true }, (err: Error, user) => {
+  let user = req.body;
+  user.update = Date.now();
+  User.findByIdAndUpdate({ _id: req.body.id }, user, { new: true }, (err: Error, user) => {
     if (err) { return errorHandler(err, res, 'Error updating the user.'); }
     res.json({ data: user, err: false });
   });
