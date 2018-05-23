@@ -9,6 +9,6 @@ module.exports = (app) => {
     .get(controller.read)
     .delete(controller.delete)
   app.use((req, res) => {
-    res.status(404).send({ data: `${req.originalUrl} not found.` })
+    res.status(404).send({ data: `${req.method}:${req.originalUrl} not found.` })
   })
 }
