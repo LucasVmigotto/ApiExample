@@ -10,6 +10,6 @@ export default (app: Express) => {
     .get(controller.read)
     .delete(controller.remove);
   app.use((req: Request, res: Response) => {
-    res.status(404).send({ data: `${req.originalUrl} not found.` })
+    res.status(404).send({ data: `${req.method}:${req.originalUrl} not found.` })
   });
 }
