@@ -1,4 +1,5 @@
 const { GraphQLDate, GraphQLDateTime } = require('graphql-iso-date')
+const controller = require('../../controllers/usercontroller')
 module.exports = {
   User: {
     birthday: {
@@ -7,12 +8,12 @@ module.exports = {
     }
   },
   Query: {
-    list: () => {},
-    read: (parent, { id }, context, info) => {}
+    list: () => controller.list(),
+    read: (parent, { id }, context, info) => controller.read(id)
   },
   Mutation: {
-    create: (parent, { input }, context, info) => {},
-    update: (parent, { id, input }, context, info) => {},
-    delete: (parent, { id }, context, info) => {}
+    create: (parent, { input }, context, info) => controller.create(input),
+    update: (parent, { id, input }, context, info) => controller.update(id, input),
+    delete: (parent, { id }, context, info) => controller.delete(id)
   }
 }
