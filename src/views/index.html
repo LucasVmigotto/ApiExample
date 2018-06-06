@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>User</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="form">
+        <form>
+          <input id="id" name="id" type="hidden" value="">
+          <label for="name">Name:</label>
+          <input id="name" name="name" value=""><br/>
+          <label for="email">E-Mail:</label>
+          <input id="email" name="email" type="email" value=""><br/>
+          <label for="birthday">Birthday:</label>
+          <input id="birthday" name="birthday" type="date"><br/>
+          <input type="submit" :value="submit" @click="registerUser()">
+        </form>
+      </div>
+      <div class="container">
+        <table class="table">
+          <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Birthday</th>
+            <th>Create At</th>
+            <th>Update At</th>
+            <th>Config</th>
+          </tr>
+          <div id="users"></div>
+        </table>
+      </div>
+      </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

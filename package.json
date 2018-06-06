@@ -36,6 +36,7 @@
     "standard": "^11.0.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -43,6 +44,7 @@
     "graphql": "^0.13.2",
     "graphql-iso-date": "^3.5.0",
     "graphql-tools": "^3.0.2",
+    "jquery": "^3.3.1",
     "mongoose": "^5.1.4",
     "path": "^0.12.7"
   }
