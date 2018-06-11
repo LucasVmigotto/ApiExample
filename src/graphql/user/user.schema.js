@@ -15,9 +15,6 @@ exports.userTypes = `
     updateAt: DateTime
   }
 
-  scalar Date
-  scalar DateTime
-
   # UserInput type definition
   input UserInput {
     # User's name
@@ -27,6 +24,9 @@ exports.userTypes = `
     # User's birthday
     birthday: Date
   }
+
+  scalar Date
+  scalar DateTime
 
 `
 

@@ -4,8 +4,8 @@ const morgan = require('morgan')
 const cors = require('cors')
 const routes = require('./routes/route')
 const app = express()
-const host = process.env.HOST || 'localhost'
-const port = process.env.PORT || 3000
+const host = process.env.SERVER_HOST || 'localhost'
+const port = process.env.SERVER_PORT || 3000
 
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'))
 app.use(cors())

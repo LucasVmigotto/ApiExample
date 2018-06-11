@@ -4,7 +4,7 @@ module.exports = {
   User: {
     birthday: {
       type: GraphQLDate,
-      resolve: user => new Date(user.birthday)
+      resolve: user => user.birthday? new Date(user.birthday) : null
     }
   },
   Query: {
@@ -15,5 +15,7 @@ module.exports = {
     create: (parent, { input }, context, info) => controller.create(input),
     update: (parent, { id, input }, context, info) => controller.update(id, input),
     delete: (parent, { id }, context, info) => controller.delete(id)
-  }
+  },
+  Date: GraphQLDate,
+  DateTime: GraphQLDateTime
 }

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path')
 const { app, BrowserWindow } = require('electron')
 
@@ -5,7 +6,7 @@ let mainWindow
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({ width: 1250, height: 900 })
-  mainWindow.loadFile(path.join(__dirname, 'views', 'index.html'))
+  mainWindow.loadURL('http://localhost:8080/')
   mainWindow.on('closed', () => mainWindow = null )
 }
 
