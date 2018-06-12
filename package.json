@@ -6,7 +6,7 @@
   "scripts": {
     "start": "concurrently \"npm run server:dev\" \"npm run vue:dev\" \"npm run electron:load\"",
     "start:prod": "concurrently \"npm run server\" \"npm run vue:dev\" \"npm run electron:load\"",
-    "start:dev": "concurrently \"npm run server:dev\" \"npm run vue:dev\"",
+    "start:dev": "concurrently \"npm run server:dev\" \"npm run vue:dev\" \"npm run electron:load\"",
     "server": "node src/server.js",
     "server:dev": "nodemon src/server.js",
     "electron:load": "electron src/electron.js",

@@ -45,6 +45,8 @@
 <script>
 import axios from 'axios'
 const api = 'http://localhost:8000/users'
+const { reqList, reqCreate,
+  reqRead, reqUpdate, reqDelete } = require('./requests')
 export default {
   name: 'app',
   data () {
@@ -66,9 +68,7 @@ export default {
   },
   methods: {
     loadUsers () {
-      axios.post(api, {
-        query: `{list{ id name email birthday createAt updateAt }}`
-      }).then(({ data }) => {
+      axios.post(api, { query: reqList }).then(({ data }) => {
         this.users = Array.from(data.data.list)
       })
     },
@@ -85,61 +85,46 @@ export default {
       this.loadUsers()
     },
     registerUser () {
+      const input = `{"name":"${this.user.name}"` +
+        `,"email":"${this.user.email}"` +
+        `${this.user.birthday !== ''
+          ? `,"birthday":"${this.user.birthday}"`
+          : ''}}`
       if (this.user.id === '') {
-        console.log('Create')
-        axios.post(api, {
-          query: `
-            mutation {
-              create(input: {
-                name: "${this.user.name}"
-                email: "${this.user.email}"
-                birthday: "${this.formatDate(this.user.birthday, 'ymd')}"
-              }){ id name createAt }
-            }
-          `
-        }).then(({ data }) => {
-          const { create } = data.data
-          !create
-            ? alert('Error saving the user')
-            : alert(`Success saving the user ${create.name}` +
-              `\nCreate at: ${this.formatDate(create.createAt, 'dmyhms')}`)
+        axios.post(`${api}?variables={"input":${input}}`,
+          {query: reqCreate }).then(({ data }) => {
+            const { create } = data.data
+            !create
+              ? alert('Error saving the user')
+              : alert(`Success saving the user ${create.name}` +
+                `\nCreate at: ${this.formatDate(create.createAt, 'dmyhms')}`)
         })
       } else {
-        axios.post(api, {
-          query: `
-            mutation {
-              update(id: "${this.user.id}", input: {
-                name: "${this.user.name}"
-                email: "${this.user.email}"
-                birthday: "${this.formatDate(this.user.birthday, 'ymd')}"
-              }){ id name updateAt }
-            }
-          `
-        }).then(({ data }) => {
-          const { update } = data.data
-          !update
-            ? alert('Error updating the user')
-            : alert(`Success updating the user ${update.name}` +
-              `\nUpdate at: ${this.formatDate(update.updateAt, 'dmyhms')}`)
+        axios.post(`${api}?variables={"id":"${this.user.id}",` +
+          `"input":${input}}`, { query: reqUpdate }).then(({ data }) => {
+            const { update } = data.data
+            !update
+              ? alert('Error updating the user')
+              : alert(`Success updating the user ${update.name}` +
+                `\nUpdate at: ${this.formatDate(update.updateAt, 'dmyhms')}`)
         })
       }
       this.resetForm()
     },
     searchUser (id) {
-      axios.post(api, {
-        query: `{read(id:"${id}"){ id name email birthday }}`
-      }).then(({ data }) => {
-        const { read } = data.data
-        this.user.id = read.id
-        this.user.name = read.name
-        this.user.email = read.email
-        this.user.birthday = this.formatDate(read.birthday, 'ymd')
-        this.submit = 'Update'
-      })
+      axios.post(`${api}?variables={"id":"${id}"}`,
+        { query: reqRead }).then(({ data }) => {
+          const { read } = data.data
+          this.user.id = read.id
+          this.user.name = read.name
+          this.user.email = read.email
+          this.user.birthday = this.formatDate(read.birthday, 'ymd')
+          this.submit = 'Update'
+        })
     },
     deleteUser (id) {
-      axios.post(api, {
-        query: `mutation{delete(id:"${id}")}`
+      axios.post(`${api}?variables={"id":"${id}"}`, {
+        query: reqDelete
       }).then(({data}) => {
         if (!data.data.delete) {
           alert("Error deleting this user")
