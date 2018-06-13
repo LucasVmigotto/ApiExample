@@ -2,20 +2,27 @@
 
 Um projeto que mostra exemplos de APIs construídas com maneiras, tecnologias e recursos diferentes. Atualmente contando com:
 
-* [JavaScript](goo.gl/yUCHeG)
-* [NodeJs](goo.gl/nZ9eqf)
-* [TypeScript](goo.gl/U1TWdw)
-* [Vue](goo.gl/rgKjAa)
-* [GraphQL](goo.gl/zNKvVA)
-* [Electron](goo.gl/7CMhnC)
+* [JavaScript](https://goo.gl/yUCHeG)
+* [NodeJs](https://goo.gl/nZ9eqf)
+* [TypeScript](https://goo.gl/U1TWdw)
+* [Vue](https://goo.gl/rgKjAa)
+* [GraphQL](https://goo.gl/zNKvVA)
+* [Electron](https://goo.gl/7CMhnC)
 
 APIs disponíveis até o momento:
 
-* Branch [JavaScript + NodeJs](goo.gl/pxm1EU)
-* Branch [TypeScript + NodeJs](goo.gl/5D9Bny)
-* Branch [JavaScript + NodeJs + Vue](goo.gl/C8WJjo)
-* Branch [JavaScript + NodeJs + GraphQL](goo.gl/aWqWQp)
-* Branch [JavaScript + NodeJs + GraphQL + Vue e Electron](goo.gl/8hkB3B)
+* Branch [JavaScript + NodeJs](https://goo.gl/pxm1EU)
+* Branch [TypeScript + NodeJs](https://goo.gl/5D9Bny)
+* Branch [JavaScript + NodeJs + Vue](https://goo.gl/C8WJjo)
+* Branch [JavaScript + NodeJs + GraphQL](https://goo.gl/aWqWQp)
+* Branch [JavaScript + NodeJs + GraphQL + Vue e Electron](https://goo.gl/8hkB3B)
+
+## Como realizar consultas nas APIs
+
+Para cada padrão usado, seja _REST_ ou _GraphQL_, há maneiras de consumir os dados. Caso queira saber mais de como realiza-las:
+
+* Para [_REST_](https://goo.gl/ecJLuW)
+* Para [_GraphQL_](https://goo.gl/sbhx9j)
 
 ## Desenvolvimento
 
